@@ -2,15 +2,12 @@ package farfetch.service;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import farfetch.dao.ToogleRepository;
 import farfetch.model.Toogle;
 
-public class ToogleService {
-	@Autowired
-	private ToogleRepository repository;
-
+@Service
+public interface ToogleService {
 	/**
 	 * Create a new Toogle by Id and value
 	 * 
@@ -18,16 +15,7 @@ public class ToogleService {
 	 * @param value
 	 * @return
 	 */
-	public Toogle createToogle(String id, boolean value) {
-		Toogle newToogle = null;
-		if (id != null && !id.isEmpty()) {
-			newToogle = new Toogle(id, value);
-			repository.save(newToogle);
-
-		}
-		return newToogle;
-
-	}
+	public Toogle createToogle(String id, boolean value);
 
 	/**
 	 * Create a new Toogle by Id, value and admin
@@ -38,30 +26,16 @@ public class ToogleService {
 	 * @param adminOnly
 	 * @return
 	 */
-	public Toogle createToogle(String id, boolean value, String admin) {
-		Toogle newToogle = null;
-		if (id != null && !id.isEmpty() && admin != null && !admin.isEmpty()) {
-			newToogle = new Toogle(id, value, admin, true);
-			repository.save(newToogle);
-
-		}
-		return newToogle;
-
-	}
+	public Toogle createToogle(String id, boolean value, String admin);
 
 	/**
-	 * Get Toogles by Id and name
-	 *  True parameter is setting the AdminOnly field
+	 * Get Toogles by Id and name True parameter is setting the AdminOnly field
+	 * 
 	 * @param id
 	 * @param admin
 	 * @return
 	 */
-	public Toogle getToogle(String id, String admin) {
-		if (id != null && !id.isEmpty() && admin != null && !admin.isEmpty()) {
-			return repository.findByIdAndAdminAndAdminOnly(id, admin, true);
-		}
-		return null;
-	}
+	public Toogle getToogle(String id, String admin);
 
 	/**
 	 * Get Toogle
@@ -69,10 +43,5 @@ public class ToogleService {
 	 * @param id
 	 * @return
 	 */
-	public List<Toogle> getToogles(String id) {
-		if (id != null && !id.isEmpty()) {
-			return repository.findById(id);
-		}
-		return null;
-	}
+	public List<Toogle> getToogles(String id);
 }

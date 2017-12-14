@@ -2,13 +2,31 @@ package farfetch.model;
 
 import org.springframework.data.annotation.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 public class Toogle {
 
+	/**
+	 * Toogle Name
+	 */
 	@Id
-	private String id;
+	private String id; 
 
+	/**
+	 * Toogle value 
+	 */
 	private boolean enable;
+	
+	/**
+	 * Toogle Version
+	 */
 	private String admin;
+	
+	/**
+	 * adminOnly is a DB property should not be sent in the response
+	 */
+	 
+	@JsonIgnore
 	private boolean adminOnly;
 
 	public Toogle(String id, boolean enable) {
