@@ -14,9 +14,8 @@ import farfetch.service.ToogleService;
 @RestController
 public class FarfetchController {
 
-	
-	final static Logger logger = Logger.getLogger(FarfetchController.class);
-	
+	final static Logger LOG = Logger.getLogger(FarfetchController.class);
+
 	@Autowired
 	ToogleService toogleService;
 
@@ -25,24 +24,32 @@ public class FarfetchController {
 	}
 
 	@RequestMapping("/getToogle")
-	public List<Toogle> getToogle(@RequestParam(value = "id", defaultValue = "isBlue") String id) {
+	public Toogle getToogle(@RequestParam(value = "id") String id) {
+		LOG.debug("Starting getToogle");
+		return toogleService.getToogle(id);
+	}
+
+	@RequestMapping("/getTooglesById")
+	public List<Toogle> getTooglesById(@RequestParam(value = "id") String id) {
+		LOG.debug("Starting getTooglesById");
 		return toogleService.getToogles(id);
 	}
 
 	@RequestMapping("/getToogleByAdmin")
-	public Toogle getToogle(@RequestParam(value = "id") String id, @RequestParam(value = "admin") String admin) {
-		return toogleService.getToogle(id, admin);
+	public Toogle getToogleByAdmin(@RequestParam(value = "id") String id, @RequestParam(value = "admin") String admin) {
+		LOG.debug("Starting getToogleByAdmin");
+		return toogleService.getTooglePerAdmin(id, admin);
 	}
 
 	@RequestMapping("/createToogle")
-	public Toogle create(@RequestParam(value = "id") String id, @RequestParam(value = "enable") boolean enable) {
+	public Toogle createToogle(@RequestParam(value = "id") String id, @RequestParam(value = "enable") boolean enable) {
 		return toogleService.createToogle(id, enable);
 	}
 
 	@RequestMapping("/createToogleAdmin")
-	public Toogle create(@RequestParam(value = "id") String id, @RequestParam(value = "enable") boolean enable,
+	public Toogle createToogleAdmin(@RequestParam(value = "id") String id, @RequestParam(value = "enable") boolean enable,
 			@RequestParam(value = "admin") String admin) {
-		
+
 		return toogleService.createToogle(id, enable, admin);
 	}
 

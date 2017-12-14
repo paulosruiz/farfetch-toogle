@@ -1,18 +1,14 @@
 package farfetch.service;
 
 import java.util.List;
-
-import javax.annotation.Resource;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import farfetch.dao.ToogleRepository;
 import farfetch.model.Toogle;
 
 @Service
-public class ToogleServiceImpl implements ToogleService{
-	
+public class ToogleServiceImpl implements ToogleService {
+
 	@Autowired
 	private ToogleRepository repository;
 
@@ -23,15 +19,15 @@ public class ToogleServiceImpl implements ToogleService{
 	 * @param value
 	 * @return
 	 */
+
+	@Override
 	public Toogle createToogle(String id, boolean value) {
 		Toogle newToogle = null;
 		if (id != null && !id.isEmpty()) {
 			newToogle = new Toogle(id, value);
 			repository.save(newToogle);
-
 		}
 		return newToogle;
-
 	}
 
 	/**
@@ -43,6 +39,8 @@ public class ToogleServiceImpl implements ToogleService{
 	 * @param adminOnly
 	 * @return
 	 */
+
+	@Override
 	public Toogle createToogle(String id, boolean value, String admin) {
 		Toogle newToogle = null;
 		if (id != null && !id.isEmpty() && admin != null && !admin.isEmpty()) {
@@ -55,13 +53,15 @@ public class ToogleServiceImpl implements ToogleService{
 	}
 
 	/**
-	 * Get Toogles by Id and name
-	 *  True parameter is setting the AdminOnly field
+	 * Get Toogles by Id and name True parameter is setting the AdminOnly field
+	 * 
 	 * @param id
 	 * @param admin
 	 * @return
 	 */
-	public Toogle getToogle(String id, String admin) {
+
+	@Override
+	public Toogle getTooglePerAdmin(String id, String admin) {
 		if (id != null && !id.isEmpty() && admin != null && !admin.isEmpty()) {
 			return repository.findByIdAndAdminAndAdminOnly(id, admin, true);
 		}
@@ -69,14 +69,27 @@ public class ToogleServiceImpl implements ToogleService{
 	}
 
 	/**
-	 * Get Toogle
+	 * Get Toogles by Id
 	 * 
 	 * @param id
 	 * @return
 	 */
+
+	@Override
 	public List<Toogle> getToogles(String id) {
 		if (id != null && !id.isEmpty()) {
 			return repository.findById(id);
+		}
+		return null;
+	}
+
+	/**
+	 * Get Toogle by Id
+	 */
+	@Override
+	public Toogle getToogle(String id) {
+		if (id != null && !id.isEmpty()) {
+			return repository.findByIdAndAdminAndAdminOnly(id, null, false);
 		}
 		return null;
 	}

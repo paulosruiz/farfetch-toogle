@@ -29,13 +29,22 @@ public interface ToogleService {
 	public Toogle createToogle(String id, boolean value, String admin);
 
 	/**
+	 * Get Toogles by Id 
+	 * 
+	 * @param id
+	 * @param admin
+	 * @return
+	 */
+	public Toogle getToogle(String id);
+	
+	/**
 	 * Get Toogles by Id and name True parameter is setting the AdminOnly field
 	 * 
 	 * @param id
 	 * @param admin
 	 * @return
 	 */
-	public Toogle getToogle(String id, String admin);
+	public Toogle getTooglePerAdmin(String id, String admin);
 
 	/**
 	 * Get Toogle

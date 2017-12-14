@@ -1,25 +1,27 @@
 package farfetch.model;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.index.CompoundIndex;
-import org.springframework.data.mongodb.core.index.CompoundIndexes;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-@CompoundIndexes({
-    @CompoundIndex(name = "toogleIndex",
-                   unique = true,
-                   def = "{'id' : 1, 'admin' : 1}")
-})
 public class Toogle {
 
-	public Long key;
+	/**
+	 * Toogle key
+	 */
+	@Id
+	private String key;
 
 	/**
 	 * Toogle Name
 	 */
-	@Id
 	private String id;
+
+	/**
+	 * Toogle Version
+	 */
+	@JsonIgnore
+	private String admin;
 
 	/**
 	 * Toogle value
@@ -27,24 +29,23 @@ public class Toogle {
 	private boolean enable;
 
 	/**
-	 * Toogle Version
-	 */
-	private String admin;
-
-	/**
 	 * adminOnly is a DB property should not be sent in the response
 	 */
 	@JsonIgnore
 	private boolean adminOnly;
 
+	public Toogle() {
+		
+	}
+	
 	public Toogle(String id, boolean enable) {
-		super();
+		this.key = id;
 		this.id = id;
 		this.enable = enable;
 	}
 
 	public Toogle(String id, boolean enable, String admin, boolean adminOnly) {
-		super();
+		this.key = id+admin;
 		this.id = id;
 		this.enable = enable;
 		this.admin = admin;
