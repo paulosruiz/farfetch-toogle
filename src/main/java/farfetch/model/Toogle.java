@@ -1,16 +1,20 @@
 package farfetch.model;
 
+import org.springframework.data.annotation.*;
+
 public class Toogle {
 
+	@Id
 	private String id;
+
 	private boolean enable;
 	private String admin;
 	private boolean adminOnly;
 
-	public Toogle(String id, boolean enable2) {
+	public Toogle(String id, boolean enable) {
 		super();
 		this.id = id;
-		this.enable = enable2;
+		this.enable = enable;
 	}
 
 	public Toogle(String id, boolean enable, String admin, boolean adminOnly) {
