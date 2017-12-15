@@ -1,13 +1,19 @@
 package farfetch.service;
 
 import java.util.List;
+
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import farfetch.controller.FarfetchController;
 import farfetch.dao.ToogleRepository;
 import farfetch.model.Toogle;
 
 @Service
 public class ToogleServiceImpl implements ToogleService {
+
+	final static Logger LOG = Logger.getLogger(ToogleServiceImpl.class);
 
 	@Autowired
 	private ToogleRepository repository;
@@ -23,9 +29,14 @@ public class ToogleServiceImpl implements ToogleService {
 	@Override
 	public Toogle createToogle(String id, boolean value) {
 		Toogle newToogle = null;
-		if (id != null && !id.isEmpty()) {
-			newToogle = new Toogle(id, value);
-			repository.save(newToogle);
+		try {
+			if (id != null && !id.isEmpty()) {
+
+				newToogle = new Toogle(id, value);
+				repository.save(newToogle);
+			}
+		} catch (Exception e) {
+			LOG.error("Error during createToogle", e);
 		}
 		return newToogle;
 	}
@@ -43,10 +54,15 @@ public class ToogleServiceImpl implements ToogleService {
 	@Override
 	public Toogle createToogle(String id, boolean value, String admin) {
 		Toogle newToogle = null;
-		if (id != null && !id.isEmpty() && admin != null && !admin.isEmpty()) {
-			newToogle = new Toogle(id, value, admin, true);
-			repository.save(newToogle);
 
+		try {
+			if (id != null && !id.isEmpty() && admin != null && !admin.isEmpty()) {
+				newToogle = new Toogle(id, value, admin, true);
+				repository.save(newToogle);
+
+			}
+		} catch (Exception e) {
+			LOG.error("Error during createToogle", e);
 		}
 		return newToogle;
 
@@ -62,10 +78,15 @@ public class ToogleServiceImpl implements ToogleService {
 
 	@Override
 	public Toogle getTooglePerAdmin(String id, String admin) {
-		if (id != null && !id.isEmpty() && admin != null && !admin.isEmpty()) {
-			return repository.findByIdAndAdminAndAdminOnly(id, admin, true);
+		Toogle toogle = null;
+		try {
+			if (id != null && !id.isEmpty() && admin != null && !admin.isEmpty()) {
+				return repository.findByIdAndAdminAndAdminOnly(id, admin, true);
+			}
+		} catch (Exception e) {
+			LOG.error("Error during getTooglePerAdmin", e);
 		}
-		return null;
+		return toogle;
 	}
 
 	/**
@@ -77,8 +98,12 @@ public class ToogleServiceImpl implements ToogleService {
 
 	@Override
 	public List<Toogle> getToogles(String id) {
-		if (id != null && !id.isEmpty()) {
-			return repository.findById(id);
+		try {
+			if (id != null && !id.isEmpty()) {
+				return repository.findById(id);
+			}
+		} catch (Exception e) {
+			LOG.error("Error during getToogles", e);
 		}
 		return null;
 	}
@@ -88,8 +113,13 @@ public class ToogleServiceImpl implements ToogleService {
 	 */
 	@Override
 	public Toogle getToogle(String id) {
-		if (id != null && !id.isEmpty()) {
-			return repository.findByIdAndAdminAndAdminOnly(id, null, false);
+		Toogle toogle = null;
+		try {
+			if (id != null && !id.isEmpty()) {
+				return repository.findByIdAndAdminAndAdminOnly(id, null, false);
+			}
+		} catch (Exception e) {
+			LOG.error("Error during getToogles", e);
 		}
 		return null;
 	}
