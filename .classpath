@@ -53,5 +53,26 @@
 	<classpathentry kind="lib" path="C:/Users/paulo.almeida.junior/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-mongodb/1.10.9.RELEASE/3af5e9fe7da19a3168359ce25126e63142e9120c/spring-data-mongodb-1.10.9.RELEASE.jar" sourcepath="C:/Users/paulo.almeida.junior/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-mongodb/1.10.9.RELEASE/a65ad83ff510f9c2a7319cd09a5710203ea3cd1d/spring-data-mongodb-1.10.9.RELEASE-sources.jar"/>
 	<classpathentry kind="lib" path="C:/Users/paulo.almeida.junior/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-data-mongodb/1.5.9.RELEASE/32db6cd936a07661461bbd8c7edc49ce64f09f95/spring-boot-starter-data-mongodb-1.5.9.RELEASE.jar" sourcepath="C:/Users/paulo.almeida.junior/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-data-mongodb/1.5.9.RELEASE/d587226f79286bf47c21258c0b81701660576e7b/spring-boot-starter-data-mongodb-1.5.9.RELEASE-sources.jar"/>
 	<classpathentry kind="lib" path="C:/Users/paulo.almeida.junior/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-commons/1.13.9.RELEASE/3910a598235d2e9c1ca56f34c5e62bb5ce23778/spring-data-commons-1.13.9.RELEASE.jar" sourcepath="C:/Users/paulo.almeida.junior/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-commons/1.13.9.RELEASE/e5a5ea28f182715ff0e9e296bb3db7c6a43070d7/spring-data-commons-1.13.9.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/paulo.almeida.junior/Documents/workspace-sts-3.9.1.RELEASE/farfetch-toogler/build/libs/aopalliance-1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/paulo.almeida.junior/Documents/workspace-sts-3.9.1.RELEASE/farfetch-toogler/build/libs/classmate-1.3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/paulo.almeida.junior/Documents/workspace-sts-3.9.1.RELEASE/farfetch-toogler/build/libs/guava-18.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/paulo.almeida.junior/Documents/workspace-sts-3.9.1.RELEASE/farfetch-toogler/build/libs/jackson-annotations-2.4.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/paulo.almeida.junior/Documents/workspace-sts-3.9.1.RELEASE/farfetch-toogler/build/libs/mapstruct-1.0.0.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/paulo.almeida.junior/Documents/workspace-sts-3.9.1.RELEASE/farfetch-toogler/build/libs/slf4j-api-1.7.21.jar"/>
+	<classpathentry kind="lib" path="C:/Users/paulo.almeida.junior/Documents/workspace-sts-3.9.1.RELEASE/farfetch-toogler/build/libs/spring-aop-4.0.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/paulo.almeida.junior/Documents/workspace-sts-3.9.1.RELEASE/farfetch-toogler/build/libs/spring-beans-4.0.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/paulo.almeida.junior/Documents/workspace-sts-3.9.1.RELEASE/farfetch-toogler/build/libs/spring-context-4.0.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/paulo.almeida.junior/Documents/workspace-sts-3.9.1.RELEASE/farfetch-toogler/build/libs/spring-core-4.0.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/paulo.almeida.junior/Documents/workspace-sts-3.9.1.RELEASE/farfetch-toogler/build/libs/spring-expression-4.0.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/paulo.almeida.junior/Documents/workspace-sts-3.9.1.RELEASE/farfetch-toogler/build/libs/springfox-core-2.5.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/paulo.almeida.junior/Documents/workspace-sts-3.9.1.RELEASE/farfetch-toogler/build/libs/springfox-schema-2.5.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/paulo.almeida.junior/Documents/workspace-sts-3.9.1.RELEASE/farfetch-toogler/build/libs/springfox-spi-2.5.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/paulo.almeida.junior/Documents/workspace-sts-3.9.1.RELEASE/farfetch-toogler/build/libs/springfox-spring-web-2.5.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/paulo.almeida.junior/Documents/workspace-sts-3.9.1.RELEASE/farfetch-toogler/build/libs/springfox-swagger2-2.5.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/paulo.almeida.junior/Documents/workspace-sts-3.9.1.RELEASE/farfetch-toogler/build/libs/springfox-swagger-common-2.5.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/paulo.almeida.junior/Documents/workspace-sts-3.9.1.RELEASE/farfetch-toogler/build/libs/spring-plugin-core-1.2.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/paulo.almeida.junior/Documents/workspace-sts-3.9.1.RELEASE/farfetch-toogler/build/libs/spring-plugin-metadata-1.2.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/paulo.almeida.junior/Documents/workspace-sts-3.9.1.RELEASE/farfetch-toogler/build/libs/swagger-annotations-1.5.9.jar"/>
+	<classpathentry kind="lib" path="C:/Users/paulo.almeida.junior/Documents/workspace-sts-3.9.1.RELEASE/farfetch-toogler/build/libs/swagger-models-1.5.9.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
