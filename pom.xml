@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.springframework</groupId>
-	<artifactId>farfetch-toogle</artifactId>
+	<artifactId>diff</artifactId>
 	<version>0.1.0</version>
 
 	<parent>
@@ -42,11 +42,11 @@
 			<artifactId>json-path</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-			<groupId>org.mongodb</groupId>
-			<artifactId>mongo-java-driver</artifactId>
-			<version>3.3.0</version>
-		</dependency>
+		 <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>runtime</scope>
+        </dependency>
 	</dependencies>
 
 	<properties>
